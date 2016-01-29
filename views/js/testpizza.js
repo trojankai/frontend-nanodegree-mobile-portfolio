@@ -495,16 +495,17 @@ function updatePositions() {
 
   window.performance.mark("mark_start_frame");
 //moves calculation of scrollTop
+
   var phaseTop = document.body.scrollTop;
 
-//moves query of DOM nodes outside of the loop
-  var items = document.querySelectorAll('.mover');
+//selects items by class name instead of query all
+  var items = document.getElementsByClassName('mover');
 
 
     for (var i = 0; i < items.length; i++) {
       var phase = Math.sin((phaseTop/1250)+ (i % 5));
       items[i].style.left = (items[i].basicLeft + 100 * phase) + 'px';
-
+      // items[i].style.transform = 'translateX((items[i].basicLeft + 100 * phase) + 'px')';
   }
 
 
