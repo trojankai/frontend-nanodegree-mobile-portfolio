@@ -532,7 +532,6 @@ document.addEventListener('DOMContentLoaded', function() {
   //prevents extra pizzas being drawn outside of screen--UdacityDiscussion
   for (var i = 0; i < 200; i++) {
     rowTop = (Math.floor(i / cols) * s);
-
     if (rowTop > window.innerHeight) {
       break;
     }
