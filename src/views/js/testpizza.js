@@ -442,7 +442,6 @@ var resizePizzas = function(size) {
 
     //store array of DOM nodes in a variable--wont get called over and over in the loop
       var randomPizzas = document.querySelectorAll(".randomPizzaContainer")
-
       for (var i = 0; i < randomPizzas.length; i++){
         randomPizzas[i].style.width = newWidth + "%";
       }
@@ -500,12 +499,11 @@ function updatePositions() {
 var phaseTop = document.body.scrollTop;
 
 
-//selects items by class name instead of query all
+//selects items by class name instead of query all, moved outside of loop
   var items = document.getElementsByClassName('mover');
     for (var i = 0; i < items.length; i++) {
       var phase = Math.sin((phaseTop/1250)+ (i % 5));
       items[i].style.left = (items[i].basicLeft + 100 * phase) + 'px';
-
   }
 
 

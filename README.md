@@ -23,7 +23,7 @@ To check PageSpeed, first download the .zip file to your local machine
   ('/.ngrok http 8080' from the root directory was necessary (for me).)
   ```
 
-* Copy the public URL ngrok gives you and run it through PageSpeed Insights!
+* Copy the public URL ngrok gives you add 'dist' and run it through PageSpeed Insights!
 ___
 ###Part 2: Optimizing Frames Per Second in pizza.html
 
@@ -34,3 +34,5 @@ ___
 
 Click on Cam's Pizza link on the index page, open DevTools, click on Timeline.
 Record scrolling and pizza changes, also note the times in the console, time to make 10 frames and time to change the sizes of pizzas will appear when action is complete.
+
+The updated/optimized 'pretty' files are in the 'src' folder, however testpizza.js is the file I created and optimized, instead of main.js.
