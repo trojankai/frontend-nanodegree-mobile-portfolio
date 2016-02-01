@@ -28,10 +28,10 @@ To check PageSpeed, first download the .zip file to your local machine
 
 #### Optimizations
  * index.html
-    -inlined CSS 
-    -added async to scripts 
-    -added print media query to print.css
-    -optimized profilepic.jpg and pizzeriapic (pagespeed insights provided optimization)
+    --inlined CSS 
+    --added async to scripts 
+    --added print media query to print.css
+    --optimized profilepic.jpg and pizzeriapic (pagespeed insights provided optimization)
 
 
 ___
@@ -39,20 +39,20 @@ ___
 
 #### Optimizations   
   * pizza.html
-    -added viewport tag for responsiveness
-    -inlined style.css 
+    --added viewport tag for responsiveness
+    --inlined style.css 
 
 
   
   * testpizza.js (main.js --> original, unedited)
-    -removed function for determineDx
-    -removed the conversion from pixels to percent for changePizzaSizes function, now based
+    --removed function for determineDx
+    --removed the conversion from pixels to percent for changePizzaSizes function, now based
     on the percentage 
-    -moved array of DOM nodes out of for loop--changed to getElementByClassName() from querySelectorAll()
-    -made a local variable for randomPizzas.length and items.length
-    -declared phase outside the loop to prevent it from being made everytime the loop is executed 
-    -declared variable items outside of the loop 
-    -changed querySelector to getElementById() or getElementByClassName() where applicable 
+    --moved array of DOM nodes out of for loop--changed to getElementByClassName() from querySelectorAll()
+    --made a local variable for randomPizzas.length and items.length
+    --declared phase outside the loop to prevent it from being made everytime the loop is executed 
+    --declared variable items outside of the loop 
+    --changed querySelector to getElementById() or getElementByClassName() where applicable 
     
     
   * optimized the pizza resizer based on recommendations given in the browser rendering course
@@ -62,3 +62,7 @@ Click on Cam's Pizza link on the index page, open DevTools, click on Timeline.
 Record scrolling and pizza changes, also note the times in the console, time to make 10 frames and time to change the sizes of pizzas will appear when action is complete.
 
 The updated/optimized 'pretty' files are in the 'src' folder, however testpizza.js is the file I created and optimized, instead of main.js.
+
+
+#### Using Gulp
+  Once you have downloaded the project and you have Node and Npm installed on your local computer, you can open the terminal or command line...cd into the project folder and type 'npm install' which will install devDependencies listed in the package.json. if any changes need to be made in the src you can run a gulp task listed in the gulpfile and it will compile it in the dist folder.
