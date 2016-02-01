@@ -24,11 +24,37 @@ To check PageSpeed, first download the .zip file to your local machine
   ```
 
 * Copy the public URL ngrok gives you add 'dist' and run it through PageSpeed Insights!
+
+
+#### Optimizations
+ * index.html
+    -inlined CSS 
+    -added async to scripts 
+    -added print media query to print.css
+    -optimized profilepic.jpg and pizzeriapic (pagespeed insights provided optimization)
+
+
 ___
 ###Part 2: Optimizing Frames Per Second in pizza.html
 
-####(Some) Optimizations made to pizza.html and testpizza.js(instead of main.js)
-  * meta tag for viewport added
+#### Optimizations   
+  * pizza.html
+    -added viewport tag for responsiveness
+    -inlined style.css 
+
+
+  
+  * testpizza.js (main.js --> original, unedited)
+    -removed function for determineDx
+    -removed the conversion from pixels to percent for changePizzaSizes function, now based
+    on the percentage 
+    -moved array of DOM nodes out of for loop--changed to getElementByClassName() from querySelectorAll()
+    -made a local variable for randomPizzas.length and items.length
+    -declared phase outside the loop to prevent it from being made everytime the loop is executed 
+    -declared variable items outside of the loop 
+    -changed querySelector to getElementById() or getElementByClassName() where applicable 
+    
+    
   * optimized the pizza resizer based on recommendations given in the browser rendering course
   * made optimizations to the background pizzas(e.g. remove DOM requests outside of the for loop)
 

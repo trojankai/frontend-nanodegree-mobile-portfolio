@@ -441,8 +441,9 @@ var resizePizzas = function(size) {
 
 
     //store array of DOM nodes in a variable--wont get called over and over in the loop
-      var randomPizzas = document.querySelectorAll(".randomPizzaContainer")
-      for (var i = 0; i < randomPizzas.length; i++){
+      var randomPizzas = document.getElementsByClassName("randomPizzaContainer")
+      var len = randomPizzas.length;
+      for (var i = 0; i < len; i++){
         randomPizzas[i].style.width = newWidth + "%";
       }
   }
@@ -496,14 +497,16 @@ function updatePositions() {
 
   window.performance.mark("mark_start_frame");
 //moves calculation of scrollTop
-var phaseTop = document.body.scrollTop;
+  var phaseTop = document.body.scrollTop;
 
 
 //selects items by class name instead of query all, moved outside of loop
   var items = document.getElementsByClassName('mover');
-    for (var i = 0; i < items.length; i++) {
-      var phase = Math.sin((phaseTop/1250)+ (i % 5));
-      items[i].style.left = (items[i].basicLeft + 100 * phase) + 'px';
+  var phase; 
+  var len = items.length;
+  for (var i = 0; i < len; i++) {
+    phase = Math.sin(phaseTop/1250+ i % 5);
+    items[i].style.left = (items[i].basicLeft + 100 * phase) + 'px';
   }
 
 
@@ -526,21 +529,23 @@ document.addEventListener('DOMContentLoaded', function() {
   var s = 256;
   var rowTop = 0;
   //prevents extra pizzas being drawn outside of screen--UdacityDiscussion
+  var elem;
+  var movingPizzas = document.getElementById('movingPizzas1');
   for (var i = 0; i < 200; i++) {
     rowTop = (Math.floor(i / cols) * s);
     if (rowTop > window.innerHeight) {
       break;
     }
-    var elem = document.createElement('img');
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = rowTop + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    movingPizzas.appendChild(elem);
   }
-  window.items = document.querySelectorAll('.mover');
+  window.items = document.getElementsByClassName('mover');
   updatePositions();
 
 });
