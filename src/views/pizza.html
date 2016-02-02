@@ -30,6 +30,8 @@
     position: fixed;
     width: 256px;
     z-index: -1;
+    -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+    backface-visibility: hidden;
   }
   .randomPizzaContainer {
     float: left;
@@ -98,7 +100,7 @@
       </div>
     </div>
     <div id="ingredients" class="row">
-      <div class="col-md-8 col-md-push-2">
+      <div class="col-md-8 col-md-push-4">
         <div class="row">
           <div class="col-md-12 centered">
             <h2>Ingredients!</h2>
@@ -144,10 +146,10 @@
         </div>
         <div id="randomPizzas" class="row">
           <div id="pizza0" class="randomPizzaContainer" style="width:33.33%;">
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-6">
               <img src="images/pizza.png" class="img-responsive">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-6">
               <h4>The Udacity Special</h4>
               <ul>
                 <li>Turkey</li>
@@ -161,10 +163,10 @@
             </div>
           </div>
           <div id="pizza1" class="randomPizzaContainer" style="width:33.33%;">
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-6">
               <img src="images/pizza.png" class="img-responsive">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-6">
               <h4>The Cameron Special</h4>
               <ul>
                 <li>Chicken</li>
