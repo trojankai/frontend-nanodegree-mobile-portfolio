@@ -44,7 +44,7 @@ ___
 
     * added .col-xs-6 to randomPizzas to ensure pizzas resized to same dimensions
 
-  * testpizza.js (main.js *> original, unedited)
+  * testpizza.js (deleted main.js)
     * removed function for determineDx
     * removed the conversion from pixels to percent for changePizzaSizes function, now based
     on the percentage
